@@ -13,6 +13,7 @@ script.setAttribute("src", "chrome-extension://pommjepgielmmlkhfgdhdddkfhkdohfg/
 document.documentElement.appendChild(script);
 
 $(function() {
+    $("table tr:nth-child(1) table td:nth-child(1) 1").attr("href", "https://news.ycombinator.com/");
     $("table tr:nth-child(1) table td:nth-child(2) span").html($("table tr:nth-child(1) table td:nth-child(2) span").html().replace(/\|/g, ''));
     if ($("table tr:nth-child(1) table td:nth-child(3) .pagetop").children().length > 1){
         $("table tr:nth-child(1) table td:nth-child(3) .pagetop").addClass("loggedIn");
@@ -73,7 +74,7 @@ $(function() {
             }
         }
     };
-    
+
     $(".news_ycombinator_com > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
     $(".news_ycombinator_com_newest > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
     $(".news_ycombinator_com > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
