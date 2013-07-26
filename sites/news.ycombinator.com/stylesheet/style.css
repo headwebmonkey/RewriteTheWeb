@@ -50,6 +50,11 @@ body > center > table > tbody > tr:nth-child(1) table td:nth-child(2) b:nth-chil
     display: none;
 }
 
+.news_ycombinator_com_submit > center > table > tbody > tr:nth-child(1) table td:nth-child(2) b:nth-child(1){
+    display: block;
+    color: #FFFFFF;
+}
+
 .pagetop{
     font-family: Arial Narrow, arial, san-serif;
     font-size: 17px;
