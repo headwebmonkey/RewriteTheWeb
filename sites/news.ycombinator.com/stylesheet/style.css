@@ -1,0 +1,160 @@
+/*
+ * ReWrite The Web
+ * 
+ * File: style.css
+ * Description: Stylesheet overrides for news.ycombinator.com
+ * Contributors: Kody Peterson (headwebmonkey)
+ */
+
+body {
+  padding: 0px;
+  margin: 12px 10%;
+  font-size: 13px;
+  background: rgb(246, 246, 239);
+  color: #888;
+}
+
+*{
+    font-family: Arial Narrow, arial, san-serif;
+}
+
+table{
+    width: 100%;
+}
+
+body > center > table > tbody > tr:nth-child(1), body > center > table > tbody > tr:nth-child(1) a{
+    color: #FFFFFF;
+}
+
+body > center > table > tbody > tr:nth-child(1) td{
+    padding: 5px;
+}
+/* LOGO IN HEADER */
+body > center > table > tbody > tr:nth-child(1) table td:nth-child(1){
+    /* This is the Hacker News Logo in the Header*/
+    width: 40px !important;
+    vertical-align: top;
+}
+
+body > center > table > tbody > tr:nth-child(1) table td:nth-child(1) a:after{
+    content: "HN";
+    font-size: 13px;
+}
+
+body > center > table > tbody > tr:nth-child(1) table td:nth-child(1) img{
+    vertical-align:top;
+    margin-right: 3px;
+}
+/* NAV BAR IN HEADER */
+body > center > table > tbody > tr:nth-child(1) table td:nth-child(2) b:nth-child(1){
+    display: none;
+}
+
+.pagetop{
+    font-family: Arial Narrow, arial, san-serif;
+    font-size: 17px;
+}
+
+.pagetop a{
+    display: block;
+    float: left;
+    padding: 12px;
+    margin-top: -12px;
+    margin-bottom: -12px;
+}
+
+.pagetop a:visited{
+    color: #FFFFFF;
+}
+
+.pagetop a:hover{
+    background: rgba(255,255,255,.2);
+}
+
+.pagetop a:first-letter{
+    text-transform: uppercase;
+}
+
+body > center > table > tbody > tr:nth-child(1) table td:nth-child(3) .pagetop a{
+    float: right;
+}
+
+.loggedIn.pagetop a{
+    float: left !important;
+}
+
+.loggedIn.pagetop a:first-child:first-letter{
+    text-transform: none;
+}
+
+td.loggedIn{
+    width: 250px;
+}
+
+body > center > table > tbody > tr:nth-child(2){
+    display: none;
+}
+
+/* CONTENT AREA */
+body > center > table > tbody > tr:nth-child(3){
+    background-color: #FFFFFF;
+}
+
+body > center > table > tbody > tr:nth-child(3) > td{
+    padding-top: 12px;
+}
+
+.list {
+    padding: 0px;
+    margin: 0px;
+}
+
+.list *{
+    font-family: arial;
+}
+
+.list li {
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding: 12px;
+}
+
+.list li .front {
+    float: left;
+    padding: 6px;
+}
+
+.list li .vote {
+    text-indent: -999px;
+    overflow: hidden;
+    display: inline-block;
+    border: 5px solid transparent;
+    border-top: 0px;
+    border-bottom: 10px solid #aaa;
+    width: 0;
+    height: 0;
+}
+
+.list a:hover {
+    color: #ff6600;
+}
+
+.more{
+    text-align: center;
+}
+
+.more a{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #ff6600;
+    margin: 5px;
+}
+
+.more a:hover{
+    background-color: #FE8433;
+    color: black;
+}
+
+
+

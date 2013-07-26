@@ -1,0 +1,43 @@
+//
+// ReWrite The Web
+// 
+// File: manifest.json
+// Description: Provides information about RWTW extension for Chrome
+// Contributors: Kody Peterson (headwebmonkey) 
+//
+
+{
+   "background": {
+      "page": "extensionCore/background.htm"
+   },
+   "browser_action": {
+      "default_icon": "extensionCore/image/icon-19.png",
+      "default_popup": "extensionCore/popup.htm",
+      "default_title": "ReWrite The Web"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "extensionCore/javascript/jquery.js", "extensionCore/javascript/apply.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "A chrome extension that fixes bugs and redesigns crappy websites!",
+   "homepage_url": "https://github.com/headwebmonkey/RewriteTheWeb",
+   "icons": {
+      "16": "extensionCore/image/icon-16.png",
+      "48": "extensionCore/image/icon-48.png"
+   },
+   "manifest_version": 2,
+   "name": "ReWrite The Web",
+   "options_page": "extensionCore/options.htm",
+   "permissions": [ "storage", "notifications", "tabs", "*://*/*", "webNavigation" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0.0",
+   "web_accessible_resources": [
+      //ANY IMAGES, CSS, AND JS FILES INJECTED INTO SITES NEED TO BE LISTED HERE!!!
+      "extensionCore/javascript/jquery.js",
+      "sites/news.ycombinator.com/manifest.json",
+      "sites/news.ycombinator.com/stylesheet/style.css",
+      "sites/news.ycombinator.com/javascript/core.js"
+   ]
+}

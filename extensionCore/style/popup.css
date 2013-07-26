@@ -1,0 +1,67 @@
+body {
+   background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FFF),color-stop(1,#F9F9F9));
+   font-family: Tahoma, Verdana, Arial, sans-serif;
+   font-size: 12px;
+}
+
+#popup {
+   margin: -8px;
+   padding: 0;
+   width: 200px;
+}
+
+#popup .loading {
+   color: #333;
+   font-size: 11px;
+   padding: 6px 0;
+   text-align: center;
+   text-shadow: #FFF 0 1px 0;
+}
+
+#popup li {
+   border-bottom: 1px solid #DDD;
+   color: #000;
+   cursor: pointer;
+   font-size: 12px;
+   padding: 4px 10px 5px;
+   text-shadow: #FFF 0 1px 0;
+   -webkit-transition: 0.3s all ease;
+}
+
+#popup li.disabled {
+   color: #999;
+}
+
+#popup li:hover {
+   background: #EEE;
+   box-shadow: rgba(0,0,0,0.2) 0 0 5px inset;
+}
+
+#popup li:first-child {
+   border-radius: 4px 4px 0 0
+}
+
+#popup li:last-child {
+   border-bottom: 0;
+   border-radius: 0 0 4px 4px
+}
+
+#popup .icon {
+   background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#77d648),color-stop(1,#3f9926));
+   border-radius: 8px;
+   box-shadow: #FFF 1px 1px 0;
+   display: block;
+   float: left;
+   height: 8px;
+   margin: 4px 6px 0 -4px;
+   width: 8px;
+}
+
+#popup .disabled .icon {
+   background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#DDD),color-stop(1,#BBB));
+}
+
+#popup .bugs {
+   font-size: 11px;
+   text-align: center;
+}
