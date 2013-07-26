@@ -85,7 +85,8 @@ $(function() {
     if(
         $("body").hasClass("news_ycombinator_com") ||
         $("body").hasClass("news_ycombinator_com_newest") ||
-        $("body").hasClass("news_ycombinator_com_jobs")
+        $("body").hasClass("news_ycombinator_com_jobs") ||
+        $("body").hasClass("news_ycombinator_com_ask")
     ){
         $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
         $("body > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
