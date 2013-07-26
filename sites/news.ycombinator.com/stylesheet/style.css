@@ -142,6 +142,10 @@ body > center > table > tbody > tr:nth-child(3) > td{
     padding: 6px;
 }
 
+.list li .foot {
+    padding-left: 26px;
+}
+
 .list li .vote {
     text-indent: -999px;
     overflow: hidden;

@@ -82,6 +82,45 @@ $(function() {
         }
     };
 
+    var commentsReCode = function(){
+        count ++;
+        rowCount ++;
+        preCount ++;
+        if(rowCount == $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").length && $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") .title").html() != undefined){
+            story = "";
+            story += "<li>";
+                story += "<div class='more'>";
+                    story += $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") .title").html();
+                story += "</div>";
+            story += "</li>";
+            newContent += story;
+            story = "";
+        } else {
+            if(count == 2){
+                count = 0;
+            } else {
+                if($("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(2) div span").html() != undefined){
+                    story += "<li>";
+                        story += "<div class='front'>";
+                            var upvote = $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(1) center").html();
+                            if (upvote === undefined){
+                                story += "<span class='vote' style='visibility:hidden'></span>";
+                            } else {
+                                story += upvote;
+                            }
+                        story += "</div>";
+                        story += $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(2) div span").html();
+                        story += "<div class='foot'>";
+                            story += $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(2) > span").html();
+                        story += "</div>";
+                    story += "</li>";
+                    newContent += story;
+                    story = "";
+                }
+            }
+        }
+    };
+
     if(
         $("body").hasClass("news_ycombinator_com") ||
         $("body").hasClass("news_ycombinator_com_newest") ||
@@ -89,6 +128,13 @@ $(function() {
         $("body").hasClass("news_ycombinator_com_ask")
     ){
         $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
+        $("body > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
+    }
+
+    if(
+        $("body").hasClass("news_ycombinator_com_newcomments")
+    ){
+        $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(commentsReCode);
         $("body > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
     }
 });
