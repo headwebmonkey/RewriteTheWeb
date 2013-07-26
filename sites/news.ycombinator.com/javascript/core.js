@@ -13,7 +13,7 @@ script.setAttribute("src", "chrome-extension://pommjepgielmmlkhfgdhdddkfhkdohfg/
 document.documentElement.appendChild(script);
 
 $(function() {
-    $("table tr:nth-child(1) table td:nth-child(1) 1").attr("href", "https://news.ycombinator.com/");
+    $("table tr:nth-child(1) table td:nth-child(1) a").attr("href", "https://news.ycombinator.com/");
     $("table tr:nth-child(1) table td:nth-child(2) span").html($("table tr:nth-child(1) table td:nth-child(2) span").html().replace(/\|/g, ''));
     if ($("table tr:nth-child(1) table td:nth-child(3) .pagetop").children().length > 1){
         $("table tr:nth-child(1) table td:nth-child(3) .pagetop").addClass("loggedIn");
