@@ -197,3 +197,13 @@ input[type="submit"]:hover{
     text-transform: uppercase;
 }
 
+/* .news_ycombinator_com_jobs Page */
+
+.news_ycombinator_com_jobs td > img{
+    display: none;
+}
+
+.news_ycombinator_com_jobs .list li:first-child{
+    text-align: center;
+}
+

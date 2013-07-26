@@ -27,19 +27,26 @@ $(function() {
             width += $(this).outerWidth();
         });
         $("td.loggedIn").css("width", width+"px");
-    }  
+    }
     var newContent = "";
     var story = "";
     var count = 0;
     var rowCount = 0;
+    var preCount = 0;
 
     var newsReCode = function(){
         count ++;
         rowCount ++;
+        preCount ++;
+        if ($("body").hasClass("news_ycombinator_com_jobs")){
+            if (preCount == 2){
+                count = 3;
+            }
+        }
         if(count == 3){
             count = 0;
         } else {
-            if(rowCount == 92){
+            if(rowCount == $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").length && $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") .title").html() != undefined){
                 story = "";
                 story += "<li>";
                     story += "<div class='more'>";
@@ -75,8 +82,12 @@ $(function() {
         }
     };
 
-    $(".news_ycombinator_com > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
-    $(".news_ycombinator_com_newest > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
-    $(".news_ycombinator_com > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
-    $(".news_ycombinator_com_newest > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
+    if(
+        $("body").hasClass("news_ycombinator_com") ||
+        $("body").hasClass("news_ycombinator_com_newest") ||
+        $("body").hasClass("news_ycombinator_com_jobs")
+    ){
+        $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(newsReCode);
+        $("body > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
+    }
 });
