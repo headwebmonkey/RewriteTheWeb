@@ -105,8 +105,8 @@ body > center > table > tbody > tr:nth-child(3) > td{
 }
 
 .list {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 .list *{
@@ -134,7 +134,7 @@ body > center > table > tbody > tr:nth-child(3) > td{
     overflow: hidden;
     display: inline-block;
     border: 5px solid transparent;
-    border-top: 0px;
+    border-top: 0;
     border-bottom: 10px solid #aaa;
     width: 0;
     height: 0;
