@@ -15,7 +15,8 @@ body {
 }
 
 .news_ycombinator_com_submit > center > table > tbody > tr:nth-child(3) > td,
-.news_ycombinator_com_x  > center > table > tbody > tr:nth-child(3) > td{
+.news_ycombinator_com_x  > center > table > tbody > tr:nth-child(3) > td,
+.news_ycombinator_com_user > center > table > tbody > tr:nth-child(3) > td{
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -190,7 +191,9 @@ input[type="submit"]:hover{
 
 /* news_ycombinator_com_submit Page */
 
-.news_ycombinator_com_x form table > tbody > tr > td:nth-child(1):first-letter, .news_ycombinator_com_submit form table > tbody > tr > td:nth-child(1):first-letter{
+.news_ycombinator_com_x form table > tbody > tr > td:nth-child(1):first-letter,
+.news_ycombinator_com_submit form table > tbody > tr > td:nth-child(1):first-letter,
+.news_ycombinator_com_user form table > tbody > tr > td:nth-child(1):first-letter{
     text-transform: uppercase;
 }
 
