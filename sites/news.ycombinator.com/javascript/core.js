@@ -83,14 +83,20 @@ $(function() {
     };
 
     var commentsReCode = function(){
+        var child1 = 3;
+        var child2 = 1;
+        if($("body").hasClass("news_ycombinator_com_threads")){
+            child1 = 4;
+            child2 = 2;
+        }
         count ++;
         rowCount ++;
         preCount ++;
-        if(rowCount == $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").length && $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") .title").html() != undefined){
+        if(rowCount == $("body > center > table > tbody > tr:nth-child("+child1+") > td > table > tbody > tr").length && $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") .title").html() != undefined){
             story = "";
             story += "<li>";
                 story += "<div class='more'>";
-                    story += $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") .title").html();
+                    story += $("body > center > table > tbody > tr:nth-child("+child1+") table tr:nth-child("+rowCount+") .title").html();
                 story += "</div>";
             story += "</li>";
             newContent += story;
@@ -99,19 +105,19 @@ $(function() {
             if(count == 2){
                 count = 0;
             } else {
-                if($("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(2) div span").html() != undefined){
+                if($("body > center > table > tbody > tr:nth-child("+child1+") table tr:nth-child("+rowCount+") td:nth-child("+(child2+1)+") div span").html() !== undefined){
                     story += "<li>";
                         story += "<div class='front'>";
-                            var upvote = $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(1) center").html();
+                            var upvote = $("body > center > table > tbody > tr:nth-child("+child1+") table tr:nth-child("+rowCount+") td:nth-child("+child2+") center").html();
                             if (upvote === undefined){
                                 story += "<span class='vote' style='visibility:hidden'></span>";
                             } else {
                                 story += upvote;
                             }
                         story += "</div>";
-                        story += $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(2) div span").html();
+                        story += $("body > center > table > tbody > tr:nth-child("+child1+") table tr:nth-child("+rowCount+") td:nth-child("+(child2+1)+") div span").html();
                         story += "<div class='foot'>";
-                            story += $("body > center > table > tbody > tr:nth-child(3) table tr:nth-child("+rowCount+") td:nth-child(2) > span").html();
+                            story += $("body > center > table > tbody > tr:nth-child("+child1+") table tr:nth-child("+rowCount+") td:nth-child("+(child2+1)+") > span").html();
                         story += "</div>";
                     story += "</li>";
                     newContent += story;
@@ -136,5 +142,12 @@ $(function() {
     ){
         $("body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr").each(commentsReCode);
         $("body > center > table > tbody > tr:nth-child(3) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
+    }
+
+    if(
+        $("body").hasClass("news_ycombinator_com_threads")
+    ){
+        $("body > center > table > tbody > tr:nth-child(4) > td > table > tbody > tr").each(commentsReCode);
+        $("body > center > table > tbody > tr:nth-child(4) table tbody").html("<tr><td><ul class='list'>"+newContent+"</ul></td></tr>");
     }
 });
