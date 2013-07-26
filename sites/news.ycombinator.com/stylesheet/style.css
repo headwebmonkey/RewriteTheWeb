@@ -119,6 +119,11 @@ body > center > table > tbody > tr:nth-child(3) > td{
     padding: 12px;
 }
 
+.list li:last-child {
+    padding-top: 20px;
+    border-bottom: none;
+}
+
 .list li .front {
     float: left;
     padding: 6px;
